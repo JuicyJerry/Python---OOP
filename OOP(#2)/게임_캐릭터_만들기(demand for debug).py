@@ -28,21 +28,23 @@
 
 class GameCharacter:
     # 게임 캐릭터 클래스
-    def __init__(self, name, hp, power):
+    @classmethod
+    def __init__(cls, name, hp, power):
         # 게임 캐릭터는 속성으로 이름, hp, 공격력을 갖는다
-        self.name = name  # string, name
-        self.hp = hp    # int, hit point
-        self.power = power  # int, power
+        cls.name = name  # string, name
+        cls.hp = hp    # int, hit point
+        cls.power = power  # int, power
 
-    def is_alive(self):
+    @classmethod
+    def is_alive(cls):
         # 게임 캐릭터가 살아있는지(체력이 0이 넘는지) 확인하는 메소드
-        #if self.hp > 0:
-        #    return True
-        #elif self.hp <= 0:
-        #    return False
-        return self.hp > 0
+        if cls.hp > 0:
+            return True
+        elif cls.hp <= 0:
+            return False
 
-    def get_attacked(self, damage):
+    @classmethod
+    def get_attacked(cls, damage):
         """
         게임 캐릭터가 살아있으면 공격한 캐릭터의 공격력만큼 체력을 깎는 메소드
         조건:
@@ -50,17 +52,18 @@ class GameCharacter:
             2. 남은 체력보다 공격력이 더 크면 체력은 0이 된다.
         """
 
-        if self.is_alive(): # 괄호 안에 self를 넣으면 어떻게 되는거지?
-            self.hp = self.hp - damage if self.hp >= damage else 0
+        if cls.is_alive(): # 괄호 안에 self를 넣으면 어떻게 되는거지?
+            cls.hp = cls.hp - damage if cls.hp >= damage else 0
         else:
-            print("{}은 이미 죽었습니다.".format(self.name))
+            print("{}은 이미 죽었습니다.".format(cls.name))
             #return "{}은 이미 죽었습니다.".format(self.name)
 
-    def attack(self, other_character):
+    @classmethod
+    def attack(cls, other_character):
         # 게임 캐릭터가 살아있으면
         # 파라미터로 받은 다른 캐릭터의 체력을 자신의 공격력만큼 깎는다.
-        if self.is_alive():
-            other_character.get_attacked(self.power)
+        if cls.is_alive():
+            other_character.get_attacked(cls.power)
 
     def __str__(self):  # self, name, hp, power라고 하면 왜 에러가 나오는거지
         # 게임 캐릭터의 의미있는 정보를 포함한 문자열을 리턴한다.
@@ -82,3 +85,5 @@ character_2.attack(character_1)
 # 게임 캐릭터 인스턴스 출력
 print(character_1)
 print(character_2)
+
+#https://www.codeit.kr/community/threads/8881
