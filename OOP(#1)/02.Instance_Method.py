@@ -27,7 +27,7 @@ user3.email = "myeongbo@codeit.kr"
 user3.password = "123444"
 
 
-# 인스턴스 메소드 사용법 / 클래스 이름.메소드 이름(인스턴스)
+# 인스턴스 메소드 사용법 / User.say_hello(user1) = 클래스 이름.메소드 이름(인스턴스)
 User.say_hello(user1)
 User.say_hello(user2)
 User.say_hello(user3)

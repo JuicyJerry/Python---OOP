@@ -5,8 +5,8 @@ class User:
         self.password = password
 # https://thebook.io/006888/partxt/xa/04/
 
-user1 = User()
-user1.initialize("Young", "young@codeit.kr", "123456")
+user1 = User() # 유저 생성
+user1.initialize("Young", "young@codeit.kr", "123456") # 유저 인스턴스 초기값 설정
 
 user2 = User()
 user2.initialize("Yoonsoo", "yoonsoo@codeit.kr", "abcdef")
