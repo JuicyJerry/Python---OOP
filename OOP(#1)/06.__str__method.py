@@ -11,5 +11,5 @@ class User:
 user1 = User("강영훈", "younghoon@codeit.kr", "123456")
 user2 = User("이윤수", "yoonsoo@codeit.kr", "1q2w3e4e")
 
-print(user1)
 print(user2)
+print(user1)
