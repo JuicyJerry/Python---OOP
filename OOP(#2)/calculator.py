@@ -3,7 +3,7 @@
 
 
 # 합
-def sum(x, y`):
+def sum(x, y):
     return x + y
 
 # 차이
