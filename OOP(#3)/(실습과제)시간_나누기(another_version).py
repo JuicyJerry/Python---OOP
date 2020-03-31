@@ -19,7 +19,7 @@ class Counter:
         """
         # 1
         if 0 <= new_value < self.limit:
-                self.value = new_value
+            self.value = new_value
         else:
             self.value = 0
 
